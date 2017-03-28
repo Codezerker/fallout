@@ -1,0 +1,6 @@
+[package]
+name = "fallout"
+version = "0.1.0"
+authors = ["Yan Li <eyeplum@gmail.com>"]
+
+[dependencies]
