@@ -19,4 +19,5 @@ fn main() {
 
     // parse file
     let parser = Parser::new(log_file);
+    parser.parse();
 }

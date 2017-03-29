@@ -5,7 +5,7 @@ use warning::Warning;
 static WARNING_MATCHER: &'static str = "warning:";
 
 pub struct Parser {
-    path: String,
+    pub path: String,
 }
 
 impl Parser {
@@ -13,7 +13,7 @@ impl Parser {
         Parser { path: path }
     }
 
-    pub fn parse() -> Result<Vec<Warning>, Error> {
+    pub fn parse(&self) /* -> Result<Vec<Warning>, Error> */ {
         // ...
     }
 }
@@ -41,5 +41,5 @@ for line in reader.lines() {
     if valid_line.contains(WARNING_MATCHER) {
         println!("{}", &valid_line);
     }
-} 
+}
 */
