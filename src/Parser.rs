@@ -17,3 +17,29 @@ impl Parser {
         // ...
     }
 }
+
+/*
+// open file
+let file = match File::open(&log_file_path) {
+    Ok(file) => file,
+    Err(_) => {
+        println!("Unable to open file: {:?}", log_file_path);
+        process::exit(1);
+    }
+};
+
+// read lines
+let reader = BufReader::new(file);
+for line in reader.lines() {
+    let valid_line = match line {
+        Ok(l) => l,
+        Err(e) => {
+            println!("Unexpected error when reading file: {:?}", e);
+            process::exit(1);
+        },
+    };
+    if valid_line.contains(WARNING_MATCHER) {
+        println!("{}", &valid_line);
+    }
+} 
+*/
