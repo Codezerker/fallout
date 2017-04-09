@@ -1,4 +1,4 @@
-use std::path::Path;
+use std::path::PathBuf;
 use std::string::String;
 
 pub struct Warning {
@@ -10,7 +10,7 @@ pub struct Warning {
 pub struct Location {
     line: u64,
     column: u64,
-    path: Path,
+    path: PathBuf,
 }
 
 pub struct Hint {

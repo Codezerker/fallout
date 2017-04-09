@@ -1,4 +1,5 @@
 use std::env;
+use std::path::PathBuf;
 use std::process;
 
 mod warning;
@@ -15,9 +16,9 @@ fn main() {
             process::exit(1);
         },
     };
-    println!("Analysing xcodebuild log file: {:?}", log_file);
 
     // parse file
-    let parser = Parser::new(log_file);
+    let file_path = PathBuf::from(log_file);
+    let parser = Parser::new(file_path);
     parser.parse();
 }
