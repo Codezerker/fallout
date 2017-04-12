@@ -20,5 +20,10 @@ fn main() {
     // parse file
     let file_path = PathBuf::from(log_file);
     let parser = Parser::new(file_path);
-    parser.parse();
+    match parser.parse() {
+        Ok(_) => {},
+        Err(error) => {
+            println!("{:?}", error);
+        },
+    };
 }

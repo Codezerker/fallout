@@ -18,14 +18,15 @@ impl Parser {
         Parser { path: path }
     }
 
-    pub fn parse(&self) {
-        println!("Analysing xcodebuild log at: {:?}", self.path.as_path());
+    pub fn parse(&self) -> Result<(), Error> {
+        println!("");
+        println!("=== Analysing xcodebuild log at: {:?} ===", self.path.as_path());
+        println!("");
 
         let file = match File::open(self.path.as_path()) {
             Ok(file) => file,
-            Err(_) => {
-                // TODO: throw error
-                process::exit(1);
+            Err(error) => {
+                return Err(error);
             }
         };
 
@@ -36,5 +37,9 @@ impl Parser {
                 println!("{}: {}", index + 1, unwraped_line);
             }
         }
+
+        println!("");
+
+        return Ok(());
     }
 }

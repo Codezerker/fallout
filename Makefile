@@ -1,5 +1,5 @@
 all: build
-	./target/debug/fallout ./resources/xcodebuild.log
+	./target/debug/fallout ./samples/xcodebuild.log
 
 build:
 	cargo build
