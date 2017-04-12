@@ -18,7 +18,7 @@ impl Parser {
         Parser { path: path }
     }
 
-    pub fn parse(&self) -> Result<(), Error> {
+    pub fn parse(&self) -> Result<Vec<Warning>, Error> {
         println!("");
         println!("=== Analysing xcodebuild log at: {:?} ===", self.path.as_path());
         println!("");
@@ -31,15 +31,13 @@ impl Parser {
         };
 
         let reader = BufReader::new(file);
+        let mut warnings: Vec<Warning> = vec![];
         for (index, line) in reader.lines().enumerate() {
             let unwraped_line = line.unwrap();
             if unwraped_line.contains(WARNING_MATCHER) {
-                println!("{}: {}", index + 1, unwraped_line);
+                warnings.push(Warning::new(unwraped_line));
             }
         }
-
-        println!("");
-
-        return Ok(());
+        return Ok(warnings);
     }
 }

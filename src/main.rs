@@ -1,11 +1,12 @@
-use std::env;
-use std::path::PathBuf;
-use std::process;
-
+extern crate rustc_serialize;
 mod warning;
 mod parser;
 
 use parser::Parser;
+use rustc_serialize::json;
+use std::env;
+use std::path::PathBuf;
+use std::process;
 
 fn main() {
     // get file path
@@ -21,7 +22,12 @@ fn main() {
     let file_path = PathBuf::from(log_file);
     let parser = Parser::new(file_path);
     match parser.parse() {
-        Ok(_) => {},
+        Ok(warnings) => {
+            println!("Number of warnings: {}", warnings.len());
+
+            println!("");
+            println!("{:?}", json::encode(&warnings).unwrap());
+        },
         Err(error) => {
             println!("{:?}", error);
         },
