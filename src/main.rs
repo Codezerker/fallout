@@ -1,9 +1,13 @@
-extern crate rustc_serialize;
+extern crate serde;
+extern crate serde_json;
+
+#[macro_use]
+extern crate serde_derive;
+
 mod warning;
 mod parser;
 
 use parser::Parser;
-use rustc_serialize::json;
 use std::env;
 use std::path::PathBuf;
 use std::process;
@@ -26,7 +30,7 @@ fn main() {
             println!("Number of warnings: {}", warnings.len());
 
             println!("");
-            println!("{:?}", json::encode(&warnings).unwrap());
+            println!("{}", serde_json::to_string_pretty(&warnings).unwrap());
         },
         Err(error) => {
             println!("{:?}", error);

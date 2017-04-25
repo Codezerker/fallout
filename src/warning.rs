@@ -1,8 +1,7 @@
-use rustc_serialize::json;
 use std::path::PathBuf;
 use std::string::String;
 
-#[derive(Debug, RustcDecodable, RustcEncodable)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Warning {
     message: String,
     hint: Option<Hint>,
@@ -19,14 +18,14 @@ impl Warning {
     }
 }
 
-#[derive(Debug, RustcDecodable, RustcEncodable)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Location {
     line: u64,
     column: u64,
     path: PathBuf,
 }
 
-#[derive(Debug, RustcDecodable, RustcEncodable)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Hint {
     source: String,
     indicator: String,
