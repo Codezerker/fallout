@@ -3,8 +3,6 @@ use std::io::BufRead;
 use std::io::BufReader;
 use std::io::Error;
 use std::path::PathBuf;
-use std::process;
-use std::string::String;
 use warning::Warning;
 
 static WARNING_MATCHER: &'static str = "warning:";
@@ -32,7 +30,7 @@ impl Parser {
 
         let reader = BufReader::new(file);
         let mut warnings: Vec<Warning> = vec![];
-        for (index, line) in reader.lines().enumerate() {
+        for (_, line) in reader.lines().enumerate() {
             let unwraped_line = line.unwrap();
             if unwraped_line.contains(WARNING_MATCHER) {
                 warnings.push(Warning::new(unwraped_line));

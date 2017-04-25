@@ -17,7 +17,7 @@ impl Exporter {
         println!("");
 
         // TODO: pop errors
-        let mut file = File::create(DEFAULT_OUTPUT_PATH).unwrap();
-        let writer = serde_json::to_writer_pretty(file, &warnings).unwrap();
+        let file = File::create(DEFAULT_OUTPUT_PATH).unwrap();
+        let _ = serde_json::to_writer_pretty(file, &warnings).unwrap();
     }
 }
