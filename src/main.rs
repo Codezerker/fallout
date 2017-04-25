@@ -4,11 +4,14 @@ extern crate serde_json;
 #[macro_use]
 extern crate serde_derive;
 
-mod warning;
+mod exporter;
 mod parser;
+mod warning;
 
+use exporter::Exporter;
 use parser::Parser;
 use std::env;
+use std::error::Error;
 use std::path::PathBuf;
 use std::process;
 
@@ -28,12 +31,12 @@ fn main() {
     match parser.parse() {
         Ok(warnings) => {
             println!("Number of warnings: {}", warnings.len());
-
-            println!("");
-            println!("{}", serde_json::to_string_pretty(&warnings).unwrap());
+            let exporter = Exporter::new();
+            exporter.export(warnings);
+            println!("SUCCESS");
         },
         Err(error) => {
-            println!("{:?}", error);
+            println!("Error: {}", error.description());
         },
     };
 }

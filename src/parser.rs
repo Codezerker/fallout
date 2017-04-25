@@ -20,7 +20,7 @@ impl Parser {
 
     pub fn parse(&self) -> Result<Vec<Warning>, Error> {
         println!("");
-        println!("=== Analysing xcodebuild log at: {:?} ===", self.path.as_path());
+        println!("=== Analysing xcodebuild log at: {} ===", self.path.to_str().unwrap_or(""));
         println!("");
 
         let file = match File::open(self.path.as_path()) {
