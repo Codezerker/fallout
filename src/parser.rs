@@ -21,13 +21,7 @@ impl Parser {
         println!("=== Analysing xcodebuild log at: {} ===", self.path.to_str().unwrap_or(""));
         println!("");
 
-        let file = match File::open(self.path.as_path()) {
-            Ok(file) => file,
-            Err(error) => {
-                return Err(error);
-            }
-        };
-
+        let file = File::open(self.path.as_path())?;
         let reader = BufReader::new(file);
         let mut warnings: Vec<Warning> = vec![];
         for (_, line) in reader.lines().enumerate() {
