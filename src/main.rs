@@ -32,7 +32,12 @@ fn main() {
         Ok(warnings) => {
             println!("Number of warnings: {}", warnings.len());
             let exporter = Exporter::new();
-            exporter.export(warnings);
+            match exporter.export(warnings) {
+                Ok(_) => {},
+                Err(error) => {
+                    println!("Error: {}", error.description());
+                },
+            };
             println!("SUCCESS");
         },
         Err(error) => {
