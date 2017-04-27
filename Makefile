@@ -6,3 +6,4 @@ build:
 
 clean:
 	rm -rf target/
+	rm ./xcodebuild_warnings.json
