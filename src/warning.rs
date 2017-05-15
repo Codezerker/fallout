@@ -9,10 +9,10 @@ pub struct Warning {
 }
 
 impl Warning {
-    pub fn new(line: String) -> Warning {
+    pub fn new(line: String, hint: Option<Hint>) -> Warning {
         Warning {
             message: line,
-            hint: None,
+            hint: hint,
             location: None,
         }
     }
@@ -29,4 +29,13 @@ pub struct Location {
 pub struct Hint {
     source: String,
     indicator: String,
+}
+
+impl Hint {
+    pub fn new(source: String, indicator: String) -> Hint {
+        Hint {
+            source: source,
+            indicator: indicator,
+        }
+    }
 }

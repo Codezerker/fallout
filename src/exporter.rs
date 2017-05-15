@@ -57,13 +57,13 @@ impl Exporter {
         Exporter {}
     }
 
-    pub fn export(&self, warnings: Vec<Warning>) -> Result<(), Error> {
+    pub fn export(&self, warnings: &Vec<Warning>) -> Result<(), Error> {
         println!("");
         println!("=== Exporting report to: {} ===", DEFAULT_OUTPUT_PATH);
         println!("");
 
         let file = File::create(DEFAULT_OUTPUT_PATH)?;
-        let _ = serde_json::to_writer_pretty(file, &warnings)?;
+        let _ = serde_json::to_writer_pretty(file, warnings)?;
         return Ok(());
     }
 }

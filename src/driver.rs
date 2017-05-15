@@ -1,0 +1,34 @@
+use file_reader::FileReader;
+use parser::Parser;
+use std::io::Error;
+use std::path::PathBuf;
+use warning::Warning;
+
+pub struct Driver {
+    file_reader: FileReader,
+    parser: Parser,
+}
+
+impl Driver {
+    pub fn new(file_path: PathBuf) -> Result<Driver, Error> {
+        let file_reader = FileReader::new(file_path)?;
+        let parser = Parser::new();
+        return Ok(Driver {
+            file_reader: file_reader,
+            parser: parser,
+        });
+    }
+
+    pub fn run(&mut self) {
+        let mut lines = self.file_reader.read(1);
+        while lines.len() > 0 {
+            let num_lines = self.parser.parse(&mut lines);
+            lines = self.file_reader.read(num_lines);
+        }
+        self.parser.flush();
+    }
+
+    pub fn parsed_warnings(&self) -> &Vec<Warning> {
+        return &self.parser.warnings;
+    }
+}

@@ -4,19 +4,35 @@ extern crate serde_json;
 #[macro_use]
 extern crate serde_derive;
 
+mod driver;
 mod exporter;
+mod file_reader;
 mod parser;
 mod warning;
 
+use driver::Driver;
 use exporter::Exporter;
-use parser::Parser;
 use std::env;
 use std::error::Error;
 use std::path::PathBuf;
 use std::process;
+use warning::Warning;
 
 fn main() {
-    // get file path
+    let file_path = get_log_file_path();
+    let mut driver = match Driver::new(file_path) {
+        Ok(driver) => driver,
+        Err(error) => {
+            println!("Error: {}", error.description());
+            process::exit(1);
+        },
+    };
+    driver.run();
+    let warnings = driver.parsed_warnings();
+    export_parsed_warnings_as_json(warnings);
+}
+
+fn get_log_file_path() -> PathBuf {
     let log_file = match env::args().nth(1) {
         Some(file) => file,
         None => {
@@ -24,24 +40,17 @@ fn main() {
             process::exit(1);
         },
     };
+    return PathBuf::from(log_file);
+}
 
-    // parse file
-    let file_path = PathBuf::from(log_file);
-    let parser = Parser::new(file_path);
-    match parser.parse() {
-        Ok(warnings) => {
-            println!("Number of warnings: {}", warnings.len());
-            let exporter = Exporter::new();
-            match exporter.export(warnings) {
-                Ok(_) => {},
-                Err(error) => {
-                    println!("Error: {}", error.description());
-                },
-            };
-            println!("SUCCESS");
-        },
+fn export_parsed_warnings_as_json(warnings: &Vec<Warning>) {
+    println!("Number of warnings: {}", warnings.len());
+    let exporter = Exporter::new();
+    match exporter.export(warnings) {
+        Ok(_) => {},
         Err(error) => {
             println!("Error: {}", error.description());
         },
     };
+    println!("SUCCESS");
 }
