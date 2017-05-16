@@ -1,0 +1,343 @@
+=== CLEAN TARGET WarningKit OF PROJECT BuildWarningSampler WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Clean.Remove clean build/Debug-iphoneos/WarningKit.framework
+    builtin-rm -rf /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/WarningKit.framework
+
+Clean.Remove clean build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build
+    builtin-rm -rf /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build
+
+=== CLEAN TARGET BuildWarningSampler OF PROJECT BuildWarningSampler WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Clean.Remove clean build/Debug-iphoneos/BuildWarningSampler.app
+    builtin-rm -rf /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app
+
+Clean.Remove clean build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build
+    builtin-rm -rf /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build
+
+** CLEAN SUCCEEDED **
+
+=== BUILD TARGET WarningKit OF PROJECT BuildWarningSampler WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/Objects-normal/armv7
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/Objects-normal/armv7/WarningKit.LinkFileList
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/WarningKit.hmap
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/module.modulemap
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/WarningKit-all-target-headers.hmap
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/WarningKit-own-target-headers.hmap
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/WarningKit-all-non-framework-target-headers.hmap
+/bin/mkdir -p /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/DerivedSources
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/DerivedSources/WarningKit_vers.c
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/WarningKit-generated-files.hmap
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/WarningKit-project-headers.hmap
+
+Create product structure
+/bin/mkdir -p /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/WarningKit.framework
+/bin/mkdir -p /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/WarningKit.framework/Headers
+
+ProcessInfoPlistFile build/Debug-iphoneos/WarningKit.framework/Info.plist WarningKit/Info.plist
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    builtin-infoPlistUtility /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/WarningKit/Info.plist -expandbuildsettings -format binary -platform iphoneos -o /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/WarningKit.framework/Info.plist
+
+CompileC build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/Objects-normal/armv7/WarningKit_vers.o build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/DerivedSources/WarningKit_vers.c normal armv7 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export LANG=en_US.US-ASCII
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fmodules -gmodules -fmodules-prune-interval=86400 -fmodules-prune-after=345600 -fbuild-session-file=/var/folders/x3/sl5f935n3wjdtphzjf3tvqn00000gn/C/org.llvm.clang/ModuleCache/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror=non-modular-include-in-framework-module -Xclang -fmodule-implementation-of -Xclang WarningKit -Wno-trigraphs -fpascal-strings -O0 -fno-common -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wdocumentation -Wunreachable-code -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk -fstrict-aliasing -Wdeprecated-declarations -miphoneos-version-min=10.3 -g -Wno-sign-conversion -Winfinite-recursion -fembed-bitcode-marker -iquote /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/WarningKit-generated-files.hmap -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/WarningKit-own-target-headers.hmap -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/WarningKit-all-non-framework-target-headers.hmap -ivfsoverlay /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/all-product-headers.yaml -iquote /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/WarningKit-project-headers.hmap -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/include -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/DerivedSources/armv7 -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/DerivedSources -F/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos -MMD -MT dependencies -MF /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/Objects-normal/armv7/WarningKit_vers.d --serialize-diagnostics /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/Objects-normal/armv7/WarningKit_vers.dia -c /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/DerivedSources/WarningKit_vers.c -o /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/Objects-normal/armv7/WarningKit_vers.o
+
+CompileC build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/Objects-normal/armv7/WNGView.o WarningKit/WNGView.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export LANG=en_US.US-ASCII
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -gmodules -fmodules-prune-interval=86400 -fmodules-prune-after=345600 -fbuild-session-file=/var/folders/x3/sl5f935n3wjdtphzjf3tvqn00000gn/C/org.llvm.clang/ModuleCache/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror=non-modular-include-in-framework-module -Xclang -fmodule-implementation-of -Xclang WarningKit -Wno-trigraphs -fpascal-strings -O0 -fno-common -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wdocumentation -Wunreachable-code -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -DOBJC_OLD_DISPATCH_PROTOTYPES=0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -miphoneos-version-min=10.3 -g -Wno-sign-conversion -Winfinite-recursion -fembed-bitcode-marker -iquote /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/WarningKit-generated-files.hmap -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/WarningKit-own-target-headers.hmap -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/WarningKit-all-non-framework-target-headers.hmap -ivfsoverlay /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/all-product-headers.yaml -iquote /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/WarningKit-project-headers.hmap -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/include -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/DerivedSources/armv7 -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/DerivedSources -F/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos -MMD -MT dependencies -MF /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/Objects-normal/armv7/WNGView.d --serialize-diagnostics /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/Objects-normal/armv7/WNGView.dia -c /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/WarningKit/WNGView.m -o /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/Objects-normal/armv7/WNGView.o
+
+Ld build/Debug-iphoneos/WarningKit.framework/WarningKit normal armv7
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export IPHONEOS_DEPLOYMENT_TARGET=10.3
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch armv7 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk -L/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos -F/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos -filelist /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/Objects-normal/armv7/WarningKit.LinkFileList -install_name @rpath/WarningKit.framework/WarningKit -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/Frameworks -miphoneos-version-min=10.3 -dead_strip -Xlinker -object_path_lto -Xlinker /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/Objects-normal/armv7/WarningKit_lto.o -Xlinker -export_dynamic -Xlinker -no_deduplicate -fembed-bitcode-marker -fobjc-arc -fobjc-link-runtime -single_module -compatibility_version 1 -current_version 1 -Xlinker -dependency_info -Xlinker /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/Objects-normal/armv7/WarningKit_dependency_info.dat -o /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/WarningKit.framework/WarningKit
+
+CpHeader WarningKit/WNGView.h build/Debug-iphoneos/WarningKit.framework/Headers/WNGView.h
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/WarningKit/WNGView.h /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/WarningKit.framework/Headers
+
+CpHeader WarningKit/WarningKit.h build/Debug-iphoneos/WarningKit.framework/Headers/WarningKit.h
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/WarningKit/WarningKit.h /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/WarningKit.framework/Headers
+
+Ditto build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/module.modulemap build/Debug-iphoneos/WarningKit.framework/Modules/module.modulemap
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/WarningKit.build/module.modulemap /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/WarningKit.framework/Modules
+
+Touch build/Debug-iphoneos/WarningKit.framework
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    /usr/bin/touch -c /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/WarningKit.framework
+
+=== BUILD TARGET BuildWarningSampler OF PROJECT BuildWarningSampler WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/swift-overrides.hmap
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-all-non-framework-target-headers.hmap
+/bin/mkdir -p /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler.LinkFileList
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler-OutputFileMap.json
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-own-target-headers.hmap
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-project-headers.hmap
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler.hmap
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-generated-files.hmap
+write-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-all-target-headers.hmap
+
+Create product structure
+/bin/mkdir -p /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app
+
+CompileSwiftSources normal armv7 com.apple.xcode.tools.swift.compiler
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -incremental -module-name BuildWarningSampler -Onone -DDEBUG -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk -target armv7-apple-ios10.3 -g -Xfrontend -serialize-debugging-options -embed-bitcode-marker -enable-testing -I /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos -F /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos -parse-as-library -c -j8 /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/BuildWarningSampler/AppDelegate.swift -output-file-map /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler-OutputFileMap.json -parseable-output -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler.swiftmodule -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-generated-files.hmap -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-own-target-headers.hmap -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-project-headers.hmap -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/include -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/DerivedSources/armv7 -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/DerivedSources -Xcc -DDEBUG=1 -emit-objc-header -emit-objc-header-path /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler-Swift.h -Xcc -working-directory/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+
+CompileSwift normal armv7 /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/BuildWarningSampler/AppDelegate.swift
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift -frontend -c -primary-file /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/BuildWarningSampler/AppDelegate.swift -target armv7-apple-ios10.3 -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk -I /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos -F /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos -enable-testing -g -D DEBUG -serialize-debugging-options -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-generated-files.hmap -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-own-target-headers.hmap -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-project-headers.hmap -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/include -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/DerivedSources/armv7 -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/DerivedSources -Xcc -DDEBUG=1 -Xcc -working-directory/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler -emit-module-doc-path /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/AppDelegate~partial.swiftdoc -serialize-diagnostics-path /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/AppDelegate.dia -Onone -parse-as-library -module-name BuildWarningSampler -emit-module-path /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/AppDelegate~partial.swiftmodule -emit-dependencies-path /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/AppDelegate.d -emit-reference-dependencies-path /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/AppDelegate.swiftdeps -o /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/AppDelegate.o -embed-bitcode-marker
+<module-includes>:1:1: warning: umbrella header for module 'WarningKit' does not include header '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/WarningKit/WNGView.h'
+#import "Headers/WarningKit.h"
+^
+/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/BuildWarningSampler/AppDelegate.swift:36:60: warning: 'UISearchDisplayController' was deprecated in iOS 8.0: UISearchDisplayController has been replaced with UISearchController
+    func searchDisplayControllerDidEndSearch(_ controller: UISearchDisplayController) {
+                                                           ^
+/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/BuildWarningSampler/AppDelegate.swift:23:13: warning: initialization of immutable value 'unusedVariable' was never used; consider replacing with assignment to '_' or removing it
+        let unusedVariable = "unused"
+        ~~~~^~~~~~~~~~~~~~
+        _
+/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/BuildWarningSampler/AppDelegate.swift:27:25: warning: immutable value 'value' was never used; consider replacing with '_' or removing it
+        case .case1(let value):
+                        ^~~~~
+                        _
+
+MergeSwiftModule normal armv7 /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler.swiftmodule
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift -frontend -emit-module /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/AppDelegate~partial.swiftmodule -parse-as-library -target armv7-apple-ios10.3 -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk -I /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos -F /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos -enable-testing -g -D DEBUG -serialize-debugging-options -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-generated-files.hmap -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-own-target-headers.hmap -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler-project-headers.hmap -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/include -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/DerivedSources/armv7 -Xcc -I/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/DerivedSources -Xcc -DDEBUG=1 -Xcc -working-directory/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler -emit-module-doc-path /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler.swiftdoc -module-name BuildWarningSampler -emit-objc-header-path /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler-Swift.h -o /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler.swiftmodule
+
+Ditto build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/DerivedSources/BuildWarningSampler-Swift.h build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler-Swift.h
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    /usr/bin/ditto -rsrc /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler-Swift.h /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/DerivedSources/BuildWarningSampler-Swift.h
+
+Ld build/Debug-iphoneos/BuildWarningSampler.app/BuildWarningSampler normal armv7
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export IPHONEOS_DEPLOYMENT_TARGET=10.3
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch armv7 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk -L/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos -F/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos -filelist /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler.LinkFileList -Xlinker -rpath -Xlinker @executable_path/Frameworks -miphoneos-version-min=10.3 -dead_strip -Xlinker -object_path_lto -Xlinker /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler_lto.o -Xlinker -export_dynamic -Xlinker -no_deduplicate -fembed-bitcode-marker -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -Xlinker -add_ast_path -Xlinker /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler.swiftmodule -framework WarningKit -Xlinker -dependency_info -Xlinker /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler_dependency_info.dat -o /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/BuildWarningSampler
+
+Ditto build/Debug-iphoneos/BuildWarningSampler.swiftmodule/arm.swiftmodule build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler.swiftmodule
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    /usr/bin/ditto -rsrc /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler.swiftmodule /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.swiftmodule/arm.swiftmodule
+
+Ditto build/Debug-iphoneos/BuildWarningSampler.swiftmodule/arm.swiftdoc build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler.swiftdoc
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    /usr/bin/ditto -rsrc /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Objects-normal/armv7/BuildWarningSampler.swiftdoc /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.swiftmodule/arm.swiftdoc
+
+CompileStoryboard BuildWarningSampler/Base.lproj/LaunchScreen.storyboard
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    export XCODE_DEVELOPER_USR_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin/..
+    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --module BuildWarningSampler --output-partial-info-plist /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/LaunchScreen-SBPartialInfo.plist --auto-activate-custom-fonts --target-device iphone --target-device ipad --minimum-deployment-target 10.3 --output-format human-readable-text --compilation-directory /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Base.lproj /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/BuildWarningSampler/Base.lproj/LaunchScreen.storyboard
+
+CompileStoryboard BuildWarningSampler/Base.lproj/Main.storyboard
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    export XCODE_DEVELOPER_USR_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin/..
+    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --module BuildWarningSampler --output-partial-info-plist /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Main-SBPartialInfo.plist --auto-activate-custom-fonts --target-device iphone --target-device ipad --minimum-deployment-target 10.3 --output-format human-readable-text --compilation-directory /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Base.lproj /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/BuildWarningSampler/Base.lproj/Main.storyboard
+/* com.apple.ibtool.document.warnings */
+/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/BuildWarningSampler/Base.lproj/Main.storyboard:BYZ-38-t0r: warning: “View Controller“ is unreachable because it has no entry points, and no identifier for runtime access via -[UIStoryboard instantiateViewControllerWithIdentifier:].
+
+CompileAssetCatalog build/Debug-iphoneos/BuildWarningSampler.app BuildWarningSampler/Assets.xcassets
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool --output-format human-readable-text --notices --warnings --export-dependency-info /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/assetcatalog_dependencies --output-partial-info-plist /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/assetcatalog_generated_info.plist --app-icon AppIcon --compress-pngs --enable-on-demand-resources YES --sticker-pack-identifier-prefix com.codezerker.BuildWarningSampler.sticker-pack. --target-device iphone --target-device ipad --minimum-deployment-target 10.3 --platform iphoneos --product-type com.apple.product-type.application --compile /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/BuildWarningSampler/Assets.xcassets
+/* com.apple.actool.compilation-results */
+/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/assetcatalog_generated_info.plist
+
+
+ProcessInfoPlistFile build/Debug-iphoneos/BuildWarningSampler.app/Info.plist BuildWarningSampler/Info.plist
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    builtin-infoPlistUtility /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/BuildWarningSampler/Info.plist -genpkginfo /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/LaunchScreen-SBPartialInfo.plist -additionalcontentfile /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/assetcatalog_generated_info.plist -additionalcontentfile /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Main-SBPartialInfo.plist -o /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Info.plist
+
+LinkStoryboards
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    export XCODE_DEVELOPER_USR_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin/..
+    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --module BuildWarningSampler --target-device iphone --target-device ipad --minimum-deployment-target 10.3 --output-format human-readable-text --link /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Base.lproj/LaunchScreen.storyboardc /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/Base.lproj/Main.storyboardc
+
+PBXCp build/Debug-iphoneos/WarningKit.framework build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/WarningKit.framework
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude *.tbd -bitcode-strip replace-with-marker -bitcode-strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip -resolve-src-symlinks /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/WarningKit.framework /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/WarningKit.framework/WarningKit -m -o /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/WarningKit.framework/WarningKit
+
+ProcessProductPackaging "" build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/WarningKit.framework.xcent
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    
+
+Entitlements:
+
+{
+    "application-identifier" = "37G4TUHERL.com.codezerker.BuildWarningSampler";
+    "com.apple.developer.team-identifier" = 37G4TUHERL;
+    "get-task-allow" = 1;
+    "keychain-access-groups" =     (
+        "37G4TUHERL.com.codezerker.BuildWarningSampler"
+    );
+}
+
+
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/WarningKit.framework.xcent
+
+CodeSign build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/WarningKit.framework
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    
+Signing Identity:     "iPhone Developer: Yan Li (D6D98RMPZC)"
+
+    /usr/bin/codesign --force --sign 7D2F6BCF607BC31429FC114C54012DEA4CCA7152 --preserve-metadata=identifier,entitlements,flags --timestamp=none /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/WarningKit.framework
+
+Touch build/Debug-iphoneos/BuildWarningSampler.app
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    /usr/bin/touch -c /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app
+
+ProcessProductPackaging /Users/eyeplum/Library/MobileDevice/Provisioning\ Profiles/c1e88ce0-69ed-4a92-91f7-8dafbdd18497.mobileprovision build/Debug-iphoneos/BuildWarningSampler.app/embedded.mobileprovision
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    builtin-productPackagingUtility /Users/eyeplum/Library/MobileDevice/Provisioning\ Profiles/c1e88ce0-69ed-4a92-91f7-8dafbdd18497.mobileprovision -o /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/embedded.mobileprovision
+
+CopySwiftLibs build/Debug-iphoneos/BuildWarningSampler.app
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk
+    builtin-swiftStdLibTool --copy --verbose --sign 7D2F6BCF607BC31429FC114C54012DEA4CCA7152 --scan-executable /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/BuildWarningSampler --scan-folder /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks --scan-folder /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/PlugIns --scan-folder /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/WarningKit.framework --platform iphoneos --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks --strip-bitcode --resource-destination /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app --resource-library libswiftRemoteMirror.dylib
+Requested Swift ABI version based on scanned binaries: 4
+Copying /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftCore.dylib to /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCore.dylib
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftCore.dylib' '-r' '-o' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCore.dylib'
+Copying /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftCoreGraphics.dylib to /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCoreGraphics.dylib
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftCoreGraphics.dylib' '-r' '-o' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCoreGraphics.dylib'
+Copying /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftCoreImage.dylib to /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCoreImage.dylib
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftCoreImage.dylib' '-r' '-o' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCoreImage.dylib'
+Copying /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftDarwin.dylib to /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftDarwin.dylib
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftDarwin.dylib' '-r' '-o' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftDarwin.dylib'
+Copying /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftDispatch.dylib to /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftDispatch.dylib
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftDispatch.dylib' '-r' '-o' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftDispatch.dylib'
+Copying /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftFoundation.dylib to /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftFoundation.dylib
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftFoundation.dylib' '-r' '-o' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftFoundation.dylib'
+Copying /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftObjectiveC.dylib to /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftObjectiveC.dylib
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftObjectiveC.dylib' '-r' '-o' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftObjectiveC.dylib'
+Copying /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftQuartzCore.dylib to /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftQuartzCore.dylib
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftQuartzCore.dylib' '-r' '-o' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftQuartzCore.dylib'
+Copying /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftUIKit.dylib to /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftUIKit.dylib
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftUIKit.dylib' '-r' '-o' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftUIKit.dylib'
+Copying /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/libswiftRemoteMirror.dylib to /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/libswiftRemoteMirror.dylib
+Probing signature of /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCore.dylib
+  /usr/bin/codesign '-r-' '--display' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCore.dylib'
+/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCore.dylib: code object is not signed at all
+Codesigning /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCore.dylib
+  /usr/bin/codesign '--force' '--sign' '7D2F6BCF607BC31429FC114C54012DEA4CCA7152' '--verbose' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCore.dylib'
+Probing signature of /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCoreImage.dylib
+Probing signature of /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftUIKit.dylib
+Probing signature of /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftDarwin.dylib
+Probing signature of /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftFoundation.dylib
+  /usr/bin/codesign '-r-' '--display' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCoreImage.dylib'
+Probing signature of /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftObjectiveC.dylib
+  /usr/bin/codesign '-r-' '--display' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftUIKit.dylib'
+  /usr/bin/codesign '-r-' '--display' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftDarwin.dylib'
+  /usr/bin/codesign '-r-' '--display' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftFoundation.dylib'
+  /usr/bin/codesign '-r-' '--display' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftObjectiveC.dylib'
+Probing signature of /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCoreGraphics.dylib
+Probing signature of /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftDispatch.dylib
+  /usr/bin/codesign '-r-' '--display' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftDispatch.dylib'
+  /usr/bin/codesign '-r-' '--display' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCoreGraphics.dylib'
+Probing signature of /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftQuartzCore.dylib
+  /usr/bin/codesign '-r-' '--display' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftQuartzCore.dylib'
+/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftQuartzCore.dylib: code object is not signed at all
+/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftUIKit.dylib: code object is not signed at all
+/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftFoundation.dylib: code object is not signed at all
+/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCoreGraphics.dylib: code object is not signed at all
+/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftDispatch.dylib: code object is not signed at all
+/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftDarwin.dylib: code object is not signed at all
+Codesigning /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftQuartzCore.dylibCodesigning /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftFoundation.dylib
+Codesigning /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCoreGraphics.dylibCodesigning /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftDispatch.dylib
+/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftObjectiveC.dylib: code object is not signed at all
+Codesigning /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftUIKit.dylib/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCoreImage.dylib: code object is not signed at all
+
+Codesigning /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftDarwin.dylib
+Codesigning /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftObjectiveC.dylib
+Codesigning /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCoreImage.dylib
+
+  /usr/bin/codesign '--force' '--sign' '7D2F6BCF607BC31429FC114C54012DEA4CCA7152' '--verbose' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftDispatch.dylib'
+  /usr/bin/codesign '--force' '--sign' '7D2F6BCF607BC31429FC114C54012DEA4CCA7152' '--verbose' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftDarwin.dylib'
+  /usr/bin/codesign '--force' '--sign' '7D2F6BCF607BC31429FC114C54012DEA4CCA7152' '--verbose' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftObjectiveC.dylib'  /usr/bin/codesign '--force' '--sign' '7D2F6BCF607BC31429FC114C54012DEA4CCA7152' '--verbose' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftFoundation.dylib'
+
+  /usr/bin/codesign '--force' '--sign' '7D2F6BCF607BC31429FC114C54012DEA4CCA7152' '--verbose' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCoreImage.dylib'
+  /usr/bin/codesign '--force' '--sign' '7D2F6BCF607BC31429FC114C54012DEA4CCA7152' '--verbose' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftCoreGraphics.dylib'
+
+  /usr/bin/codesign '--force' '--sign' '7D2F6BCF607BC31429FC114C54012DEA4CCA7152' '--verbose' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftQuartzCore.dylib'
+  /usr/bin/codesign '--force' '--sign' '7D2F6BCF607BC31429FC114C54012DEA4CCA7152' '--verbose' '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app/Frameworks/libswiftUIKit.dylib'
+
+ProcessProductPackaging "" build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler.app.xcent
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    
+
+Entitlements:
+
+{
+    "application-identifier" = "37G4TUHERL.com.codezerker.BuildWarningSampler";
+    "com.apple.developer.team-identifier" = 37G4TUHERL;
+    "get-task-allow" = 1;
+    "keychain-access-groups" =     (
+        "37G4TUHERL.com.codezerker.BuildWarningSampler"
+    );
+}
+
+
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler.app.xcent
+
+CodeSign build/Debug-iphoneos/BuildWarningSampler.app
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    
+Signing Identity:     "iPhone Developer: Yan Li (D6D98RMPZC)"
+Provisioning Profile: "iOS Team Provisioning Profile: *"
+                      (c1e88ce0-69ed-4a92-91f7-8dafbdd18497)
+
+    /usr/bin/codesign --force --sign 7D2F6BCF607BC31429FC114C54012DEA4CCA7152 --entitlements /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/BuildWarningSampler.build/Debug-iphoneos/BuildWarningSampler.build/BuildWarningSampler.app.xcent --timestamp=none /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app
+
+Validate build/Debug-iphoneos/BuildWarningSampler.app
+    cd /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/sbin:/Users/eyeplum/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    export PRODUCT_TYPE=com.apple.product-type.application
+    builtin-validationUtility /Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/build/Debug-iphoneos/BuildWarningSampler.app
+
+** BUILD SUCCEEDED **
+
