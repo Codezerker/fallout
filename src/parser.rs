@@ -25,20 +25,20 @@ impl Parser {
 
         let mut i = 0;
         while i < self.line_buffer.len() {
-            let line = self.line_buffer[i].clone();
+            let line = self.line_at_index(i);
             if !line.contains(WARNING_MATCHER) {
                 i += 1;
                 continue;
             }
 
             if i + 2 < self.line_buffer.len() {
-                let potential_hint = self.line_buffer[i + 2].clone();
+                let potential_hint = self.line_at_index(i + 2);
                 if self.is_hint(&potential_hint) {
-                    let source = self.line_buffer[i + 1].clone();
+                    let source = self.line_at_index(i + 1);
                     let hint = Hint::new(source, potential_hint);
                     let warning = Warning::new(line, Some(hint));
                     self.warnings.push(warning);
-                    i += 2;
+                    i += 3;
                 } else {
                     let warning = Warning::new(line, None);
                     self.warnings.push(warning);
@@ -57,8 +57,15 @@ impl Parser {
         // TODO: drain line_buffer
     }
 
+    fn line_at_index(&self, index: usize) -> String {
+        return self.line_buffer[index].trim_matches('\n').to_string();
+    }
+
     fn is_hint(&self, line: &String) -> bool {
+        if line.is_empty() {
+            return false;
+        }
         let trimmed = line.trim_matches(|c| c == ' ' || c == '~' || c == '^');
-        return trimmed == "\n";
+        return trimmed.is_empty();
     }
 }
