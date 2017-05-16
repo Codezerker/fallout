@@ -1,3 +1,4 @@
+extern crate colored;
 extern crate serde;
 extern crate serde_json;
 
@@ -10,6 +11,7 @@ mod file_reader;
 mod parser;
 mod warning;
 
+use colored::*;
 use driver::Driver;
 use exporter::Exporter;
 use std::env;
@@ -21,7 +23,9 @@ use warning::Warning;
 fn main() {
     let file_path = get_log_file_path();
 
-    println!("\n=== Analyzing: {} ===\n", &file_path.to_str().unwrap());
+    println!("\n{} {} {}\n", "=== Analyzing:".green(),
+                             &file_path.to_str().unwrap().magenta(),
+                             "===".green());
 
     let mut driver = match Driver::new(file_path) {
         Ok(driver) => driver,
@@ -47,14 +51,14 @@ fn get_log_file_path() -> PathBuf {
 }
 
 fn export_parsed_warnings_as_json(warnings: &Vec<Warning>) {
-    println!("Number of warnings: {}", warnings.len());
+    println!("Number of warnings: {}", warnings.len().to_string().yellow());
 
     let exporter = Exporter::new();
     match exporter.export(warnings) {
         Ok(_) => {},
         Err(error) => {
-            println!("Error: {}", error.description());
+            println!("Error: {}", error.description().red());
         },
     };
-    println!("SUCCESS\n");
+    println!("{}\n", "SUCCESS".blue());
 }

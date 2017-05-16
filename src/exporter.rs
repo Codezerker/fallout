@@ -1,3 +1,4 @@
+use colored::*;
 use serde_json;
 use std::error;
 use std::fmt;
@@ -58,7 +59,9 @@ impl Exporter {
     }
 
     pub fn export(&self, warnings: &Vec<Warning>) -> Result<(), Error> {
-        println!("\n=== Exporting report to: {} ===\n", DEFAULT_OUTPUT_PATH);
+        println!("\n{} {} {}\n", "=== Exporting report to:".green(),
+                                 DEFAULT_OUTPUT_PATH.magenta(),
+                                 "===".green());
 
         let file = File::create(DEFAULT_OUTPUT_PATH)?;
         let _ = serde_json::to_writer_pretty(file, warnings)?;
