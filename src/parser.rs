@@ -2,6 +2,7 @@ use warning::Hint;
 use warning::Warning;
 
 static WARNING_MATCHER: &'static str = "warning:";
+static WARNING_MATCHER_UPPERCASED: &'static str = "Warning:";
 
 pub struct Parser {
     pub warnings: Vec<Warning>,
@@ -26,7 +27,7 @@ impl Parser {
         let mut i = 0;
         while i < self.line_buffer.len() {
             let line = self.line_at_index(i);
-            if !line.contains(WARNING_MATCHER) {
+            if !self.is_warning(&line) {
                 i += 1;
                 continue;
             }
@@ -59,6 +60,10 @@ impl Parser {
 
     fn line_at_index(&self, index: usize) -> String {
         return self.line_buffer[index].trim_matches('\n').to_string();
+    }
+
+    fn is_warning(&self, line: &String) -> bool {
+        return line.contains(WARNING_MATCHER) || line.contains(WARNING_MATCHER_UPPERCASED);
     }
 
     fn is_hint(&self, line: &String) -> bool {
