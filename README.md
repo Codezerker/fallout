@@ -4,6 +4,8 @@
 
 Warning infomation collector for `xcodebuild`.
 
+[![Build Status](https://travis-ci.org/Codezerker/fallout.svg?branch=master)](https://travis-ci.org/Codezerker/fallout)
+
 ## Usage
 
 ```shell
