@@ -1,8 +1,10 @@
 all: build
-	./target/debug/fallout ./samples/xcodebuild.log
 
 build:
 	cargo build
+
+test:
+	cargo test
 
 install:
 	cargo build --release
@@ -10,4 +12,4 @@ install:
 
 clean:
 	rm -rf target/
-	rm ./xcodebuild_warnings.json
+	rm -rf ./xcodebuild_warnings.json

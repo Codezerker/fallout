@@ -1,12 +1,9 @@
-use colored::*;
 use serde_json;
 use std::error;
 use std::fmt;
 use std::fs::File;
 use std::io;
 use warning::Warning;
-
-static DEFAULT_OUTPUT_PATH: &'static str = "./xcodebuild_warnings.json";
 
 #[derive(Debug)]
 pub enum Error {
@@ -58,12 +55,8 @@ impl Exporter {
         Exporter {}
     }
 
-    pub fn export(&self, warnings: &Vec<Warning>) -> Result<(), Error> {
-        println!("\n{} {} {}\n", "=== Exporting report to:".blue(),
-                                 DEFAULT_OUTPUT_PATH.magenta(),
-                                 "===".blue());
-
-        let file = File::create(DEFAULT_OUTPUT_PATH)?;
+    pub fn export(&self, warnings: &Vec<Warning>, output_path: &str) -> Result<(), Error> {
+        let file = File::create(output_path)?;
         let _ = serde_json::to_writer_pretty(file, warnings)?;
         return Ok(());
     }

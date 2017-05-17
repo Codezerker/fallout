@@ -3,9 +3,9 @@ use std::string::String;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Warning {
-    message: String,
-    hint: Option<Hint>,
-    location: Option<Location>,
+    pub message: String,
+    pub hint: Option<Hint>,
+    pub location: Option<Location>,
 }
 
 impl Warning {
@@ -20,15 +20,15 @@ impl Warning {
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Location {
-    line: u64,
-    column: u64,
-    path: PathBuf,
+    pub line: u64,
+    pub column: u64,
+    pub path: PathBuf,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Hint {
-    source: String,
-    indicator: String,
+    pub source: String,
+    pub indicator: String,
 }
 
 impl Hint {
