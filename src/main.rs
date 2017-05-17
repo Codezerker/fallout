@@ -23,9 +23,9 @@ use warning::Warning;
 fn main() {
     let file_path = get_log_file_path();
 
-    println!("\n{} {} {}\n", "=== Analyzing:".green(),
+    println!("\n{} {} {}\n", "=== Analyzing:".blue(),
                              &file_path.to_str().unwrap().magenta(),
-                             "===".green());
+                             "===".blue());
 
     let mut driver = match Driver::new(file_path) {
         Ok(driver) => driver,
@@ -60,5 +60,5 @@ fn export_parsed_warnings_as_json(warnings: &Vec<Warning>) {
             println!("Error: {}", error.description().red());
         },
     };
-    println!("{}\n", "SUCCESS".blue());
+    println!("{}\n", "SUCCESS".green());
 }

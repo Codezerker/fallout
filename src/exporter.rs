@@ -59,9 +59,9 @@ impl Exporter {
     }
 
     pub fn export(&self, warnings: &Vec<Warning>) -> Result<(), Error> {
-        println!("\n{} {} {}\n", "=== Exporting report to:".green(),
+        println!("\n{} {} {}\n", "=== Exporting report to:".blue(),
                                  DEFAULT_OUTPUT_PATH.magenta(),
-                                 "===".green());
+                                 "===".blue());
 
         let file = File::create(DEFAULT_OUTPUT_PATH)?;
         let _ = serde_json::to_writer_pretty(file, warnings)?;
