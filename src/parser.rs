@@ -24,6 +24,7 @@ impl Parser {
             return 1;
         }
 
+        let mut warning_buffer: Vec<Warning> = vec![];
         let mut i = 0;
         while i < self.line_buffer.len() {
             let line = self.line_at_index(i);
@@ -38,11 +39,11 @@ impl Parser {
                     let source = self.line_at_index(i + 1);
                     let hint = Hint::new(source, potential_hint);
                     let warning = Warning::new(line, Some(hint));
-                    self.warnings.push(warning);
+                    warning_buffer.push(warning);
                     i += 3;
                 } else {
                     let warning = Warning::new(line, None);
-                    self.warnings.push(warning);
+                    warning_buffer.push(warning);
                     i += 1;
                 }
             } else {
@@ -50,6 +51,7 @@ impl Parser {
             }
         }
 
+        self.warnings.append(&mut warning_buffer);
         self.line_buffer.clear();
         return 1;
     }
