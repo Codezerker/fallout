@@ -28,7 +28,7 @@ impl Driver {
         self.parser.flush();
     }
 
-    pub fn parsed_warnings(&self) -> &Vec<Warning> {
-        return &self.parser.warnings;
+    pub fn parsed_warnings(&mut self) -> &mut Vec<Warning> {
+        return &mut self.parser.warnings;
     }
 }
