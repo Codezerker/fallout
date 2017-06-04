@@ -26,7 +26,7 @@ fn main() {
     let mut driver = Driver::new(file_path).unwrap_or_else(|error| {
         println!("Error: {}\n", error.description().red());
         process::exit(1);
-    }); 
+    });
     driver.run();
     let warnings = driver.parsed_warnings();
 
