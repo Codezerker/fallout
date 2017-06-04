@@ -38,11 +38,11 @@ impl Parser {
                 if self.is_hint(&potential_hint) {
                     let source = self.line_at_index(i + 1);
                     let hint = Hint::new(source, potential_hint);
-                    let warning = Warning::new(line, Some(hint));
+                    let warning = Warning::new(line, Some(hint), None);
                     warning_buffer.push(warning);
                     i += 3;
                 } else {
-                    let warning = Warning::new(line, None);
+                    let warning = Warning::new(line, None, None);
                     warning_buffer.push(warning);
                     i += 1;
                 }
