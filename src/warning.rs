@@ -22,16 +22,14 @@ pub struct Location {
     pub line_num: u64,
     pub colum_num: u64,
     pub file_path: String,
-    pub module_name: String,
 }
 
 impl Location {
-    pub fn new(line_num: u64, colum_num: u64, file_path: String, module_name: String) -> Location {
+    pub fn new(line_num: u64, colum_num: u64, file_path: String) -> Location {
         Location {
             line_num: line_num,
             colum_num: colum_num,
             file_path: file_path,
-            module_name: module_name,
         }
     }
 }
