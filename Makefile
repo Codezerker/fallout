@@ -1,4 +1,5 @@
 all: build
+	cat ./xcodebuild_warnings.json
 
 build:
 	cargo build
