@@ -1,5 +1,5 @@
-use warning::Hint;
-use warning::Warning;
+use xcode_output::warning::Hint;
+use xcode_output::warning::Warning;
 
 static WARNING_MATCHER: &'static str = "warning:";
 static WARNING_MATCHER_UPPERCASED: &'static str = "Warning:";

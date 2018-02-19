@@ -3,7 +3,7 @@ use std::error;
 use std::fmt;
 use std::fs::File;
 use std::io;
-use warning::Warning;
+use xcode_output::warning::Warning;
 
 #[derive(Debug)]
 pub enum Error {

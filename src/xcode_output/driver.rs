@@ -1,8 +1,8 @@
-use file_reader::FileReader;
-use parser::Parser;
+use xcode_output::file_reader::FileReader;
+use xcode_output::parser::Parser;
+use xcode_output::warning::Warning;
 use std::io::Error;
 use std::path::PathBuf;
-use warning::Warning;
 
 pub struct Driver {
     file_reader: FileReader,

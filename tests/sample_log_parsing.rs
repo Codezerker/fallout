@@ -1,7 +1,7 @@
 use std::path::PathBuf;
 
 extern crate fallout;
-use fallout::driver::Driver;
+use fallout::xcode_output::driver::Driver;
 
 #[test]
 fn test_sample_log_parsing() {
@@ -12,7 +12,7 @@ fn test_sample_log_parsing() {
     let mut driver = Driver::new(file_path).unwrap();
     driver.run();
 
-    let mut warnings = driver.parsed_warnings();
+    let warnings = driver.parsed_warnings();
     assert!(warnings.len() == 8);
     assert!(warnings[2].message == "<module-includes>:1:1: warning: umbrella header for module 'WarningKit' does not include header '/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/WarningKit/WNGView.h'");
     assert!(warnings[2].hint.is_none());

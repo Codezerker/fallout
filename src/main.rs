@@ -7,8 +7,8 @@ extern crate colored;
 use colored::*;
 
 extern crate fallout;
-use fallout::driver::Driver;
-use fallout::exporter::Exporter;
+use fallout::xcode_output::driver::Driver;
+use fallout::xcode_output::exporter::Exporter;
 
 static DEFAULT_OUTPUT_PATH: &'static str = "./xcodebuild_warnings.json";
 
@@ -26,7 +26,7 @@ fn main() {
     let mut driver = Driver::new(file_path).unwrap_or_else(|error| {
         println!("Error: {}\n", error.description().red());
         process::exit(1);
-    }); 
+    });
     driver.run();
     let warnings = driver.parsed_warnings();
 
