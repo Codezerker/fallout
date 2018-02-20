@@ -28,14 +28,14 @@ impl Parser {
         let mut i = 0;
         while i < self.line_buffer.len() {
             let line = self.line_at_index(i);
-            if !self.is_warning(&line) {
+            if !Parser::is_warning(&line) {
                 i += 1;
                 continue;
             }
 
             if i + 2 < self.line_buffer.len() {
                 let potential_hint = self.line_at_index(i + 2);
-                if self.is_hint(&potential_hint) {
+                if Parser::is_hint(&potential_hint) {
                     let source = self.line_at_index(i + 1);
                     let hint = Hint::new(source, potential_hint);
                     let warning = Warning::new(line, Some(hint));
@@ -64,11 +64,11 @@ impl Parser {
         return self.line_buffer[index].trim_matches('\n').to_string();
     }
 
-    fn is_warning(&self, line: &String) -> bool {
+    fn is_warning(line: &String) -> bool {
         return line.contains(WARNING_MATCHER) || line.contains(WARNING_MATCHER_UPPERCASED);
     }
 
-    fn is_hint(&self, line: &String) -> bool {
+    fn is_hint(line: &String) -> bool {
         if line.is_empty() {
             return false;
         }

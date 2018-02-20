@@ -18,10 +18,10 @@ fn test_sample_log_parsing() {
     assert!(warnings[2].hint.is_none());
     assert!(warnings[2].location.is_none());
 
-    let warning = warnings.remove(5);
+    let warning = &mut warnings[5];
     assert!(warning.message == "/Users/eyeplum/Projects/fallout/samples/BuildWarningSampler/BuildWarningSampler/AppDelegate.swift:23:13: warning: initialization of immutable value 'unusedVariable' was never used; consider replacing with assignment to '_' or removing it");
 
-    let hint = warning.hint.unwrap(); 
+    let hint = warning.hint.take().unwrap();
     assert!(hint.source    == "        let unusedVariable = \"unused\"");
     assert!(hint.indicator == "        ~~~~^~~~~~~~~~~~~~");
 }
